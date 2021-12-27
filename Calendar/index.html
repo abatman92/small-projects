@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body">
+    <div class="page">
+        <header class="header">
+            <h1>Календарь</h1>
+            <div class="mini-calendar">
+                <div class="mini-calendar_top"></div>
+                <div class="mini-calendar_bottom">
+                    <span class="mini-calendar_day"></span>
+                    <span class="mini-calendar_weekday"></span>
+                </div>
+            </div>
+        </header>
+        <main class="table-zone">
+            <h2 class="table-zone_month"></h2>
+            <div class="weekdays">
+                <div class="weekday">ПН</div>
+                <div class="weekday">ВТ</div>
+                <div class="weekday">СР</div>
+                <div class="weekday">ЧТ</div>
+                <div class="weekday">ПТ</div>
+                <div class="weekday weekend">СБ</div>
+                <div class="weekday weekend">ВС</div>
+            </div>
+            <div class="calendary-table"></div>
+            <a href="#" class="select-month_btn" id="monthUp">&#10095;</a>
+            <a href="#" class="select-month_btn" id="monthDown">&#10094;</a>
+
+        </main>
+    </div>
+
+    <div class="create-plan_background">
+        <form class="create-plan_modal">
+            <h3 class="create-plan_heading">Добавить задачу</h3>
+            <div class="modal_inputs-container">
+                <div class="modal_input-container">
+                <input type="date" name="date-inp">
+                <label for="date-inp">Выбрать дату</label>
+                </div>
+                <div class="modal_input-container">
+                <input type="time" name="time-inp">
+                <label for="time-inp">Выбрать время</label>
+                </div>
+                <div class="modal_input-container">
+                <input type="text" name="date-title">
+                <label for="date-title">Заголовок</label>
+                </div>
+            </div>
+            <label for="text-inp">Введите описание:</label>
+            <textarea name="text-inp" cols="30" rows="10"></textarea>
+            <button class="modal-btn" id="save-btn" type="submit">Сохранить</button>
+            <button class="modal-btn" id="reset-btn" type="reset">Очистить форму</button>
+            <button class="modal-btn" id="cancel-btn" type="button">Отмена</button>
+        <form/>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
