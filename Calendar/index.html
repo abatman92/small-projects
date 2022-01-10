@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendary</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f19c0f9fd8.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="body">
     <div class="page">
         <header class="header">
@@ -20,7 +23,15 @@
             </div>
         </header>
         <main class="table-zone">
-            <h2 class="table-zone_month"></h2>
+            <div class="table-header">
+                <h2 class="table-zone_month"></h2>
+                <button class="table-header_button">
+                    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar-plus" class="svg-inline--fa fa-calendar-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor" d="M336 292v24c0 6.6-5.4 12-12 12h-76v76c0 6.6-5.4 12-12 12h-24c-6.6 0-12-5.4-12-12v-76h-76c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h76v-76c0-6.6 5.4-12 12-12h24c6.6 0 12 5.4 12 12v76h76c6.6 0 12 5.4 12 12zm112-180v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path>
+                    </svg>
+                    Добавить задачу
+                </button>
+            </div>
             <div class="weekdays">
                 <div class="weekday">ПН</div>
                 <div class="weekday">ВТ</div>
@@ -42,25 +53,37 @@
             <h3 class="create-plan_heading">Добавить задачу</h3>
             <div class="modal_inputs-container">
                 <div class="modal_input-container">
-                <input type="date" name="date-inp">
-                <label for="date-inp">Выбрать дату</label>
+                    <input type="date" name="date-inp">
+                    <label for="date-inp">Выбрать дату</label>
                 </div>
                 <div class="modal_input-container">
-                <input type="time" name="time-inp">
-                <label for="time-inp">Выбрать время</label>
+                    <input type="time" name="time-inp">
+                    <label for="time-inp">Выбрать время</label>
                 </div>
                 <div class="modal_input-container">
-                <input type="text" name="date-title">
-                <label for="date-title">Заголовок</label>
+                    <input type="text" name="date-title">
+                    <label for="date-title">Заголовок</label>
                 </div>
             </div>
+            <p class="modal-error" style="opacity: 0;">Поля выше должны быть заполнены</p>
             <label for="text-inp">Введите описание:</label>
             <textarea name="text-inp" cols="30" rows="10"></textarea>
-            <button class="modal-btn" id="save-btn" type="submit">Сохранить</button>
-            <button class="modal-btn" id="reset-btn" type="reset">Очистить форму</button>
-            <button class="modal-btn" id="cancel-btn" type="button">Отмена</button>
-        <form/>
+            <div class="modal-btns">
+                <button class="modal-btn" id="save-btn" type="submit">Сохранить</button>
+                <button class="modal-btn" id="reset-btn" type="reset">Очистить форму</button>
+                <button class="modal-btn" id="cancel-btn" type="button">Отмена</button>
+            </div>
+        </form>
+
+        <div class="modal-background"></div>
+        <template id="plan-template">
+            <div class="dayplan_list">
+                <h3 class="dayplan_list_heading"></h3>
+                <div class="dayplan_list-div"></div>
+            </div>
+        </template>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
