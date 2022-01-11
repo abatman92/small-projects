@@ -89,11 +89,18 @@ const makeTable = () => {
             day.classList.add('day_active');
             if (dayPlans.length > 0) {
                 const dayPlanLink = document.createElement('button');
-                dayPlanLink.textContent = `Задачи (${dayPlans.length})`
+                dayPlanLink.textContent = `Задачи (${dayPlans.length})`;
+                dayPlanLink.addEventListener('click', (event) => {
+                    document.querySelector('.modal-background').classList.add('modal-background_active')
+                    event.target.nextElementSibling.classList.add('dayplan_list_active')
+                })
                 day.append(dayPlanLink)
                 const dayPlanList = (document.querySelector('#plan-template').content).cloneNode(true);
                 dayPlanList.querySelector('.dayplan_list_heading').textContent = `Задачи на ${dayString}`
-
+                dayPlanList.querySelector('button').addEventListener('click', (e) => {
+                    e.target.closest('.dayplan_list').classList.remove('dayplan_list_active')
+                    document.querySelector('.modal-background').classList.remove('modal-background_active')
+                })
                 dayPlans.forEach(item => {
                     const dayPlanDiv = document.createElement('div');
                     console.log(dayPlanDiv);
